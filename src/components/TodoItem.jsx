@@ -1,11 +1,11 @@
 import React from 'react';
 
-const TodoItem = ({ todo, setTodos, todos }) => {
+const TodoItem = ({ todos, setTodos, todoItem }) => {
   return (
     <div>
       <div>
-        <h3>제목</h3>
-        <span>내용</span>
+        <h3>{todoItem.title}</h3>
+        <span>{todoItem.content}</span>
       </div>
       <div>
         <button>삭제하기</button>

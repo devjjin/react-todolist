@@ -6,12 +6,19 @@ function TodoList({ todos, setTodos }) {
     <div>
       <div>
         <h3>Working 🔥</h3>
-        <TodoItem />
+        {
+          todos
+          .filter((todo) => !todo.isDone)
+          .map((todoItem) => <TodoItem key={todoItem.id} todos={todos} setTodos={setTodos} todoItem={todoItem} />)
+        }
       </div>
       <div>
         <h3>Done 🎉</h3>
-        <TodoItem />
-      </div>
+        {
+          todos
+          .filter((todo) => todo.isDone)
+          .map((todoItem) => <TodoItem key={todoItem.id} todos={todos} setTodos={setTodos} todoItem={todoItem} />)
+        }      </div>
     </div>
   );
 }
