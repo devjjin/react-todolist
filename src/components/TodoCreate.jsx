@@ -18,15 +18,15 @@ const TodoCreate = ({ todos, setTodos }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={onSubmitHandler}>
-        <div>
+    <div className="create__container">
+      <form className="form__container" onSubmit={onSubmitHandler}>
+        <div className="form__group">
           <label>제목</label>
           <input type="text" id="title" value={todoItem.title} onChange={onChangeHandler}></input>
           <label>내용</label>
           <input type="text" id="content" value={todoItem.content} onChange={onChangeHandler}></input>
         </div>
-        <button>추가하기</button>
+        <button className="submitBtn">추가하기</button>
       </form>
     </div>
   );

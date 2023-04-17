@@ -8,7 +8,7 @@ const App = () => {
   const [todos, setTodos] = useState([]);
 
   return (
-    <div>
+    <div className="container">
       <TodoHeader />
       <TodoCreate todos={todos} setTodos={setTodos} />
       <TodoList todos={todos} setTodos={setTodos} />

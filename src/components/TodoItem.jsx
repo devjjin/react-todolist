@@ -17,13 +17,13 @@ const TodoItem = ({ todoItem, todos, setTodos }) => {
   };
 
   return (
-    <div>
-      <div key={todoItem.id}>
+    <div className="todoitem__container">
+      <div className="todoitem" key={todoItem.id}>
         <h3>{todoItem.title}</h3>
         <div>{todoItem.content}</div>
-        <div>
-          <button onClick={() => onRemoveHandler(todoItem.id)}>삭제하기</button>
-          <button onClick={() => onStatusHandler(todoItem.id)}>{!todoItem.isDone ? '완료' : '취소'}</button>
+        <div className="todoitem__btn__container">
+          <button className="todoitem__removeBtn" onClick={() => onRemoveHandler(todoItem.id)}>삭제하기</button>
+          <button className="todoitem__statusBtn" onClick={() => onStatusHandler(todoItem.id)}>{!todoItem.isDone ? '완료' : '취소'}</button>
         </div>
       </div>
     </div>

@@ -2,9 +2,8 @@ import React from 'react';
 
 const TodoHeader = () => {
     return (
-        <div>
-            <h3>My Todolist</h3>
-            <h3>React</h3>
+        <div className="header">
+            <h3>📒 My Todo List</h3>
         </div>
     );
 }
