@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const TodoCreate = ({ todos, setTodos }) => {
-  const [todoItem, setTodoItem] = useState({ id: '', title: '', content: '', isDone: false });
+  const [todoItem, setTodoItem] = useState({ id: 0, title: '', content: '', isDone: false });
 
   const onChangeHandler = e => {
     setTodoItem({ ...todoItem, [e.target.id]: e.target.value });
@@ -10,7 +10,7 @@ const TodoCreate = ({ todos, setTodos }) => {
   const onSubmitHandler = e => {
     e.preventDefault();
     const newTodo = {
-      id: todos.length + 1,
+      id: Date.now(),
       ...todoItem,
     };
     setTodos([...todos, newTodo]);
