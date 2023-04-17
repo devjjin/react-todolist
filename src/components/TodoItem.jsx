@@ -1,20 +1,9 @@
 import React from 'react';
 
 const TodoItem = ({ todoItem, todos, setTodos }) => {
-  const onRemoveHandler = id => {
-    const removeTodo = todos.filter(todo => todo.id !== id);
-    setTodos(removeTodo);
-  };
+  const onRemoveHandler = id => setTodos(todos.filter(todo => todo.id !== id));
 
-  const onStatusHandler = id => {
-    const updatedTodo = todos.map(todo => {
-      if (todo.id === id) {
-        return { ...todo, isDone: !todo.isDone };
-      }
-      return todo;
-    });
-    setTodos(updatedTodo);
-  };
+  const onStatusHandler = id => setTodos(todos.map(todo => (todo.id === id ? { ...todo, isDone: !todo.isDone } : todo)));
 
   return (
     <div className="todoitem__container">
